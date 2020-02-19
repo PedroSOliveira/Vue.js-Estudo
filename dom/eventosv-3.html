@@ -1,0 +1,44 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <div class="id" id="app">
+        <p>{{contador}}</p>
+        <button v-on:click="somar(5, $event)" type="button" class="btn btn-primary">Somar 1</button>
+        <p v-on:mousemove="atualizar">Mouse:{{x}},{{y}}
+        <span v-on:mousemove="parar">Parar Aqui</span></p>
+
+        <a v-on:click.prevent href="https://www.google.com.br/">Google</a>
+        <hr>
+        <input type="text" v-on:keyup.enter ="exibirAlerta">
+    
+    </div>
+
+
+<script>
+   new Vue({
+       el: '#app',
+       data:{
+           x:0,
+           y:0,
+           contador: 0
+       },
+       methods:{
+           atualizar(event){
+               this.x = event.clientX
+               this.y = event.clientY
+           },
+           somar(soma, event){
+               console.log(soma, event)
+               this.contador += soma
+
+           },
+           parar(event){
+               event.stopPropagation()
+           },
+           exibirAlerta(){
+               alert("Não faça isso !!")
+           }
+       }
+   })
+</script>

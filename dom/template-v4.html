@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{saudacao()}}</p>
+    <p>{{titulo}}</p>
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            titulo:'Curso',
+            link:'https://www.google.com.br/'
+        },
+        methods:{
+            saudacao(){
+                console.log(this)
+                return this.titulo
+            }
+        }
+
+    })
+</script>
