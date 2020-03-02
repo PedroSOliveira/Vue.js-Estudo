@@ -1,0 +1,45 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div id="app">
+    <p>{{contador}} | {{contador2}}</p>
+    <p>{{resultado}}</p>
+    <button v-on:click="somar" type="button" class="btn btn-primary">Somar 1</button>
+    <button v-on:click="somar2" type="button" class="btn btn-primary">Somar 2</button>
+    <button v-on:click="diminuir" type="button" class="btn btn-danger">Tirar 1</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            contador2: 0
+            
+        },
+        computed: {
+            resultado(){
+               return this.contador >= 5 ?
+                'Maior ou igual a  5' : 'Menor que 5'
+            }
+        },
+
+        methods: {
+            somar() {
+                 this.contador++
+
+            },
+
+            somar2() {
+                 this.contador2 +=2
+
+            },
+
+            diminuir(){
+                this.contador--
+            }
+        }
+
+    })
+</script>

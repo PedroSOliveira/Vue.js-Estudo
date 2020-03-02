@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="id" id="app">
+    <p>{{contador}}</p>
+    <p>{{contador > 10 ? 'Maior que 10' : 'Menor que 10'}}</p>
+    <button v-on:click="somar" type="button" class="btn btn-primary">Somar 1</button>
+
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods: {
+            somar() {
+                this.contador++
+            }
+        }
+
+    })
+</script>
