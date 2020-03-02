@@ -1,0 +1,22 @@
+  <meta charset="UTF-8">
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <div id="app">
+        <p v-if="logado">Usuário Logado: {{nome }}</p>
+        <p v-if="!logado">Nenhum usuário logado</p>
+
+        <button @click="logado = !logado">{{logado ? 'Sair' : 'Entrar'}}  </button>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                nome:'Maria',
+                logado:false,
+                
+            }
+        })
+    </script>
